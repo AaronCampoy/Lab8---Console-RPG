@@ -7,6 +7,7 @@
 using namespace std;
 
 void CreateCharacter();
+void Prologue();
 void HUD();
 void Combat();
 void CombatHUD();
@@ -37,6 +38,10 @@ int main()
     nextLevel = 76;
 
     CreateCharacter();
+
+    Prologue();
+
+    system("pause");
 
     totalHealth = health;
     maxHealth = totalHealth;
@@ -127,6 +132,28 @@ void CreateCharacter()
     cout << "Creating Character...\n";
     Sleep(500);
     system("cls");
+}
+
+void Prologue(){
+    string story1 = "You wake up in a small bed, on a thin and cheap mattress, the light from the sun through the window blinding you as you open your eyes. You don't know how you got here. All you can remember is your name. ";
+    string story2 = ". You leave the shabby room to discover you've been sleeping in a small inn attached to a dingy tavern. You waste no time. With no memory of who you once were, you set out to seek answers.";
+
+    for(int i = 0; i < story1.length(); i++){
+        cout << story1[i];
+        Sleep(25);
+    }
+
+    Sleep(500);
+    cout << name;
+    Sleep(500);
+
+    for(int i = 0; i < story2.length(); i++){
+        cout << story2[i];
+        Sleep(25);
+    }
+
+    cout << "\n\n";
+
 }
 
 void HUD()
